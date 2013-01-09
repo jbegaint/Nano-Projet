@@ -16,9 +16,8 @@ int extract_byte(unsigned char pixdata[], int n, int *p_pos,
 
 	while (k < n && j < 7) {
 		for (i = l - 1; i >= 0; i--) {
-			//      p |= mask; // on modifie le bit en "l'allumant"
 			p |= (((pixdata[k] >> i) & 0x1) << (7 - j));
-			// on décale les bits du  pixel de i pour prendre le bit qui nous intéresse, 
+			// on décale de i pour prendre le bit qui nous intéresse, 
 			// puis on allume le bit de p à la position voulue.
 			j++;
 		}
@@ -28,9 +27,8 @@ int extract_byte(unsigned char pixdata[], int n, int *p_pos,
 	*p_pos = k;
 	*p_b = p;
 
-	if (j < 6) {
+	if (j < 6)
 		return 1;
-	};
 
 	return 0;
 }
@@ -59,7 +57,7 @@ int extract_file(char *fileName, IMAGE_T * p_img, char bitParPixel)
 		extract_byte(*(p_img->data), n, &p_pos, &p_b, bitParPixel);
 		nb_octet |= (p_b << (24 - i * 8));
 	}
-	//un int codé sur 4 octets, représentant le nb d'octets du fichier à cacher  
+	//int codé sur 4 octets 
 	printf("Nb d'octets a extraire: %d \n", nb_octet);
 
 	int nw;
@@ -67,12 +65,11 @@ int extract_file(char *fileName, IMAGE_T * p_img, char bitParPixel)
 	for (i = 0; i < nb_octet; i++) {
 		nw = extract_byte(*(p_img->data), n, &p_pos, &p_b,
 				  bitParPixel);
-		if (nw < 0) {
+		if (nw != 0) {
 			return 1;
 		};
 		nw = fwrite(&p_b, sizeof(unsigned char), 1, fileout);
-		//on ecrit octet par octet le nouveau fichier
-		if (nw < 0) {
+		if (nw != 1) {
 			return 1;
 		};
 	}

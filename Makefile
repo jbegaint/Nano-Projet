@@ -1,7 +1,7 @@
 CFLAGS= -g -Wall 
 LDFLAGS=
 
-all: decode
+all: decode encode
 
 encode:encodage.o pgm_file.o encode_stegano.o image.o
 	gcc -o $@ $^ $(LDFLAGS)	

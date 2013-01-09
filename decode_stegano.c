@@ -6,7 +6,6 @@
 
 int main(int argc, char *argv[])
 {
-	/*3 arguments, dont 1 fac. argv[0]: nom du programme, donc on commence a 3 */
 	if (argc < 2 || argc > 4) {
 		printf
 		    ("Usage: decode <imageIn.pgm> <fileToRecreate> [ <nbbitsparpixel> ]\n");

@@ -25,9 +25,14 @@ int main(int argc, char *argv[])
 		if (img == NULL)
 			return 1;
 
-		write_pgm_file(argv[3], img, "Gen By Barbosa");
+		
+		int nw;
+		nw = write_pgm_file(argv[3], img, "Gen By Barbosa");
 
 		free_image(img);
+
+		if (nw != 0)
+			return 1;
 
 		return 0;
 	}
