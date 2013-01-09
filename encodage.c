@@ -55,7 +55,7 @@ int hide_byte(unsigned char pixdata[], int n, int *p_pos, unsigned char b,
 
 	l = atoi(&bitParPixel);
 
-	while (k < n && j < 7) {
+	while (k < n && j < 8) {
 		for (i = l - 1; i >= 0; i--) {
 			pixdata[k] &= ~(1 << i);	//clear bit i
 			pixdata[k] |= ((b >> (7 - j)) & 0x1) << i;	//set bit i
