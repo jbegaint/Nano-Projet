@@ -52,7 +52,7 @@ IMAGE_T *read_pgm_file(char *fileName)
 	/*Pour récupérer nbc et nbl */
 	if (fgets(line, sizeof(line), filein) != NULL) {
 
- 		/*calcul du nombre de chiffre de nbc */
+		/*calcul du nombre de chiffre de nbc */
 		int nbc_len = 0;
 		do {
 			nbc_len++;

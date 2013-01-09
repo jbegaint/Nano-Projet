@@ -14,7 +14,7 @@
  * 	fileName : nom du fichier PGM à lire
  * RETOUR : pointeur vers l’IMAGE_T lue, ou NULL en cas d’erreur
  */
-IMAGE_T * read_pgm_file(char *fileName) ;
+IMAGE_T *read_pgm_file(char *fileName);
 
 
 /* Ecrit l’image passée en paramètre dans un fichier au format PGM P5.
@@ -25,7 +25,7 @@ IMAGE_T * read_pgm_file(char *fileName) ;
  *		Sinon, sur la seconde ligne ‘#’ est écrit, suivi de "comment".
  * RETOUR : 0 si tout se passe bien ; autre chose en cas d’erreur.
  */
-int write_pgm_file(char *fileName, IMAGE_T * p_img, char * comment) ;
+int write_pgm_file(char *fileName, IMAGE_T * p_img, char *comment);
 
 
 #endif

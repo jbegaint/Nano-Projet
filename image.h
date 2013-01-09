@@ -19,7 +19,7 @@ typedef struct {
  * RETOUR : pointeur vers l’IMAGE_T allouée, ou NULL en cas d’erreur
  */
 IMAGE_T *alloc_image(int nbl, int nbc);
-	
+
 
 /**
  * Libère la mémoire préalablement allouée pour une image de nbl*nbc pixels.
