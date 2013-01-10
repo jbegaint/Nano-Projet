@@ -37,15 +37,6 @@
 //      return 0;
 // }
 
-void brint(unsigned char a)
-{
-	int k;
-	for (k = 7; k >= 0; k--) {
-		printf("%d", (a >> k) & 0x1);
-	}
-	printf("\n");
-}
-
 int hide_byte(unsigned char pixdata[], int n, int *p_pos, unsigned char b,
 	      char bitParPixel)
 {
