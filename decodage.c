@@ -3,16 +3,6 @@
 
 #include "decodage.h"
 
-
-/*void print_bits(unsigned char a)
-{
-	int k;
-	for (k = 7; k >= 0; k--) {
-		printf("%d", (a >> k) & 0x1);
-	}
-	printf("\n");
-}*/
-
 int extract_byte(unsigned char pixdata[], int n, int *p_pos,
 		 unsigned char *p_b, char bitParPixel)
 {
